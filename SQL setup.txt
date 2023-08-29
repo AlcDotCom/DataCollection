@@ -1,0 +1,665 @@
+
+
+create table dbo.DowntimeTable (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+Prestoj varchar(100),
+KategoriaPrestoja varchar(100),
+Linka varchar(100),
+DatumZapisu datetime,
+ZaciatokPrestoja varchar(100),
+KoniecPrestoja varchar(100),
+TrvaniePrestoja varchar(100),
+Zmena varchar(100),
+HotovyVyrobok varchar(100),
+VstupnyMaterial varchar(100),
+Stanica varchar(100),
+Detail varchar(100),
+ZastavenieVyroby varchar(100),
+PoruchuOdstranil varchar(100),
+PricinaAleboPopisPoruchy varchar(8000),
+VykonaneOpatrenieOprava varchar(8000),
+StrataOperator varchar(100),
+CenaOperator1hod varchar(100),
+Status varchar(1000),
+Rezerva1 varchar(1000),
+Rezerva2 varchar(1000),
+Rezerva3 varchar(1000),
+Rezerva4 varchar(1000),
+Rezerva5 varchar(1000),
+ );
+
+
+
+
+
+
+CREATE PROC DowntimeTableAddOrEdit
+@ID int,
+@Prestoj varchar(100),
+@KategoriaPrestoja varchar(100),
+@Linka varchar(100),
+@DatumZapisu varchar(100),
+@ZaciatokPrestoja varchar(100),
+@KoniecPrestoja varchar(100),
+@TrvaniePrestoja varchar(100),
+@Zmena varchar(100),
+@HotovyVyrobok varchar(100),
+@VstupnyMaterial varchar(100),
+@Stanica varchar(100),
+@Detail varchar(100),
+@ZastavenieVyroby varchar(100),
+@PoruchuOdstranil varchar(100),
+@PricinaAleboPopisPoruchy varchar(8000),
+@VykonaneOpatrenieOprava varchar(8000),
+@StrataOperator varchar(100),
+@CenaOperator1hod varchar(100),
+@Status varchar(1000),
+@Rezerva1 varchar(1000),
+@Rezerva2 varchar(1000),
+@Rezerva3 varchar(1000),
+@Rezerva4 varchar(1000),
+@Rezerva5 varchar(1000)
+AS
+ IF @ID = 0
+INSERT INTO DowntimeTable(Prestoj,KategoriaPrestoja,Linka,DatumZapisu,ZaciatokPrestoja,KoniecPrestoja,TrvaniePrestoja,Zmena,HotovyVyrobok,VstupnyMaterial,Stanica,Detail,ZastavenieVyroby,PoruchuOdstranil,PricinaAleboPopisPoruchy,VykonaneOpatrenieOprava,StrataOperator,CenaOperator1hod,Status,Rezerva1,Rezerva2,Rezerva3,Rezerva4,Rezerva5)
+VALUES (@Prestoj,@KategoriaPrestoja,@Linka,@DatumZapisu,@ZaciatokPrestoja,@KoniecPrestoja,@TrvaniePrestoja,@Zmena,@HotovyVyrobok,@VstupnyMaterial,@Stanica,@Detail,@ZastavenieVyroby,@PoruchuOdstranil,@PricinaAleboPopisPoruchy,@VykonaneOpatrenieOprava,@StrataOperator,@CenaOperator1hod,@Status,@Rezerva1,@Rezerva2,@Rezerva3,@Rezerva4,@Rezerva5)
+ELSE
+UPDATE DowntimeTable
+SET
+Prestoj = @Prestoj,
+KategoriaPrestoja = @KategoriaPrestoja,
+Linka = @Linka,
+DatumZapisu = @DatumZapisu,
+ZaciatokPrestoja = @ZaciatokPrestoja ,
+KoniecPrestoja = @KoniecPrestoja,
+TrvaniePrestoja = @TrvaniePrestoja ,
+Zmena = @Zmena,
+HotovyVyrobok = @HotovyVyrobok,
+VstupnyMaterial = @VstupnyMaterial,
+Stanica = @Stanica,
+Detail = @Detail,
+ZastavenieVyroby = @ZastavenieVyroby,
+PoruchuOdstranil = @PoruchuOdstranil,
+PricinaAleboPopisPoruchy = @PricinaAleboPopisPoruchy,
+VykonaneOpatrenieOprava = @VykonaneOpatrenieOprava,
+StrataOperator = @StrataOperator,
+CenaOperator1hod = @CenaOperator1hod,
+Status = @Status,
+Rezerva1 = @Rezerva1,
+Rezerva2 = @Rezerva2,
+Rezerva3 = @Rezerva3,
+Rezerva4 = @Rezerva4,
+Rezerva5 = @Rezerva5
+WHERE ID = @ID
+
+
+
+
+CREATE PROC DowntimeTableDeleteById   
+@ID int,
+@Rezerva1 varchar(1000),
+@Rezerva2 varchar(1000)
+AS
+UPDATE DowntimeTable
+SET
+Status = 'Vymazany',
+Rezerva1 = @Rezerva1,
+Rezerva2 = @Rezerva2
+WHERE ID = @ID
+
+
+
+
+create table dbo.access (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+HEX varchar(100),
+NASTAVENIE varchar(100),
+VYMAZ varchar(100),
+MENO varchar(100),
+PRIEZVISKO varchar(100),
+zalozil varchar(100),
+datum varchar(100),
+rezerva1 varchar(100),
+rezerva2 varchar(100),
+rezerva3 varchar(100),
+ );
+
+
+
+
+
+CREATE PROC AccessTableAddOrEdit
+@ID int,
+@HEX varchar(100),
+@NASTAVENIE varchar(100),
+@VYMAZ varchar(100),
+@MENO varchar(100),
+@PRIEZVISKO varchar(100),
+@zalozil varchar(100),
+@datum varchar(100),
+@rezerva1 varchar(100),
+@rezerva2 varchar(100),
+@rezerva3 varchar(100)
+AS
+ IF @ID = 0
+INSERT INTO access(HEX,NASTAVENIE,VYMAZ,MENO,PRIEZVISKO,zalozil,datum,rezerva1,rezerva2,rezerva3)
+VALUES (@HEX,@NASTAVENIE,@VYMAZ,@MENO,@PRIEZVISKO,@zalozil,@datum,@rezerva1,@rezerva2,@rezerva3)
+ELSE
+UPDATE access
+SET
+HEX = @HEX,
+NASTAVENIE = @NASTAVENIE,
+VYMAZ = @VYMAZ,
+MENO = @MENO,
+PRIEZVISKO = @PRIEZVISKO,
+zalozil = @zalozil,
+datum = @datum,
+rezerva1 = @rezerva1,
+rezerva2 = @rezerva2,
+rezerva3 = @rezerva3
+WHERE ID = @ID
+
+
+
+
+
+create table dbo.DowntimeOptions (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+Linka varchar(100),
+Stanica varchar(100),
+DetailStanice1 varchar(100),
+DetailStanice2 varchar(100),
+DetailStanice3 varchar(100),
+DetailStanice4 varchar(100),
+DetailStanice5 varchar(100),
+DetailStanice6 varchar(100),
+DetailStanice7 varchar(100),
+DetailStanice8 varchar(100),
+DetailStanice9 varchar(100),
+DetailStanice10 varchar(100),
+DetailStanice11 varchar(100),
+DetailStanice12 varchar(100),
+DetailStanice13 varchar(100),
+DetailStanice14 varchar(100),
+DetailStanice15 varchar(100),
+DetailStanice16 varchar(100),
+DetailStanice17 varchar(100),
+DetailStanice18 varchar(100),
+DetailStanice19 varchar(100),
+DetailStanice20 varchar(100),
+KategoriePROCES varchar(100),
+KategorieNEKVALITA varchar(100),
+KategorieMATERIAL varchar(100),
+HotovyVyrobok varchar(100),
+JednotlivyMaterial varchar(100),
+Cena1hod varchar(100),
+rezerva1 varchar(100),
+rezerva2 varchar(100),
+rezerva3 varchar(100),
+ );
+
+
+
+
+
+CREATE PROC OptionsTableAddOrEdit
+@ID int,
+@Linka varchar(100),
+@Stanica varchar(100),
+@DetailStanice1 varchar(100),
+@DetailStanice2 varchar(100),
+@DetailStanice3 varchar(100),
+@DetailStanice4 varchar(100),
+@DetailStanice5 varchar(100),
+@DetailStanice6 varchar(100),
+@DetailStanice7 varchar(100),
+@DetailStanice8 varchar(100),
+@DetailStanice9 varchar(100),
+@DetailStanice10 varchar(100),
+@DetailStanice11 varchar(100),
+@DetailStanice12 varchar(100),
+@DetailStanice13 varchar(100),
+@DetailStanice14 varchar(100),
+@DetailStanice15 varchar(100),
+@DetailStanice16 varchar(100),
+@DetailStanice17 varchar(100),
+@DetailStanice18 varchar(100),
+@DetailStanice19 varchar(100),
+@DetailStanice20 varchar(100),
+@KategoriePROCES varchar(100),
+@KategorieNEKVALITA varchar(100),
+@KategorieMATERIAL varchar(100),
+@HotovyVyrobok varchar(100),
+@JednotlivyMaterial varchar(100),
+@Cena1hod varchar(100),
+@rezerva1 varchar(100),
+@rezerva2 varchar(100),
+@rezerva3 varchar(100)
+AS
+ IF @ID = 0
+INSERT INTO DowntimeOptions(Linka,Stanica,DetailStanice1,DetailStanice2,DetailStanice3,DetailStanice4,DetailStanice5,DetailStanice6,DetailStanice7,DetailStanice8,DetailStanice9,DetailStanice10,DetailStanice11,DetailStanice12,DetailStanice13,DetailStanice14,DetailStanice15,DetailStanice16,DetailStanice17,DetailStanice18,DetailStanice19,DetailStanice20,KategoriePROCES,KategorieNEKVALITA,KategorieMATERIAL,HotovyVyrobok,JednotlivyMaterial,Cena1hod,rezerva1,rezerva2,rezerva3)
+VALUES (@Linka,@Stanica,@DetailStanice1,@DetailStanice2,@DetailStanice3,@DetailStanice4,@DetailStanice5,@DetailStanice6,@DetailStanice7,@DetailStanice8,@DetailStanice9,@DetailStanice10,@DetailStanice11,@DetailStanice12,@DetailStanice13,@DetailStanice14,@DetailStanice15,@DetailStanice16,@DetailStanice17,@DetailStanice18,@DetailStanice19,@DetailStanice20,@KategoriePROCES,@KategorieNEKVALITA,@KategorieMATERIAL,@HotovyVyrobok,@JednotlivyMaterial,@Cena1hod,@rezerva1,@rezerva2,@rezerva3)
+ELSE
+UPDATE DowntimeOptions
+SET
+Linka = @Linka,
+Stanica = @Stanica,
+DetailStanice1 = @DetailStanice1,
+DetailStanice2 = @DetailStanice2,
+DetailStanice3 = @DetailStanice3,
+DetailStanice4 = @DetailStanice4,
+DetailStanice5 = @DetailStanice5,
+DetailStanice6 = @DetailStanice6,
+DetailStanice7 = @DetailStanice7,
+DetailStanice8 = @DetailStanice8,
+DetailStanice9 = @DetailStanice9,
+DetailStanice10 = @DetailStanice10,
+DetailStanice11 = @DetailStanice11,
+DetailStanice12 = @DetailStanice12,
+DetailStanice13 = @DetailStanice13,
+DetailStanice14 = @DetailStanice14,
+DetailStanice15 = @DetailStanice15,
+DetailStanice16 = @DetailStanice16,
+DetailStanice17 = @DetailStanice17,
+DetailStanice18 = @DetailStanice18,
+DetailStanice19 = @DetailStanice19,
+DetailStanice20 = @DetailStanice20,
+KategoriePROCES = @KategoriePROCES,
+KategorieNEKVALITA = @KategorieNEKVALITA,
+KategorieMATERIAL = @KategorieMATERIAL,
+HotovyVyrobok = @HotovyVyrobok,
+JednotlivyMaterial = @JednotlivyMaterial,
+Cena1hod = @Cena1hod,
+rezerva1 = @rezerva1,
+rezerva2 = @rezerva2,
+rezerva3 = @rezerva3
+WHERE ID = @ID
+
+
+
+
+
+CREATE PROC OptionsTableDeleteById   
+@ID int
+AS
+DELETE FROM DowntimeOptions
+WHERE ID = @ID
+
+
+
+
+
+create table dbo.NokOptions (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+Linka varchar(100),
+Operacia varchar(100),
+KodChyby varchar(100),
+PopisChyby varchar(1000),
+LimitNaZmenu varchar(100),
+LimitNaZmenu1 varchar(100),
+LimitNaZmenu2 varchar(100),
+Autor varchar(100),
+DatumPridania varchar(100),
+Rezerva1 varchar(1000),
+Rezerva2 varchar(1000),
+Rezerva3 varchar(1000),
+);
+
+
+
+
+create table dbo.NokRegistration (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+Linka varchar(100),
+Operacia varchar(100),
+KodChyby varchar(100),
+PopisChyby varchar(1000),
+Zmena varchar(100),
+LimitNaZmenu varchar(100),
+LimitNaZmenu1 varchar(100),
+LimitNaZmenu2 varchar(100),
+Pocet varchar(100),
+Zapisal varchar(100),
+DatumZapisu varchar(100),
+Rezerva1 varchar(1000),
+Rezerva2 varchar(1000),
+Rezerva3 varchar(1000),
+);
+
+
+
+
+
+CREATE PROC NOKTableAddOrEdit
+@ID int,
+@Linka varchar(100),
+@Operacia varchar(100),
+@KodChyby varchar(100),
+@PopisChyby varchar(100),
+@LimitNaZmenu varchar(100),
+@LimitNaZmenu1 varchar(100),
+@LimitNaZmenu2 varchar(100),
+@Autor varchar(100),
+@DatumPridania varchar(100),
+@Rezerva1 varchar(100),
+@Rezerva2 varchar(100),
+@Rezerva3 varchar(100)
+AS
+ IF @ID = 0
+INSERT INTO NokOptions(Linka,Operacia,KodChyby,PopisChyby,LimitNaZmenu,LimitNaZmenu1,LimitNaZmenu2,Autor,DatumPridania,Rezerva1,Rezerva2,Rezerva3)
+VALUES (@Linka,@Operacia,@KodChyby,@PopisChyby,@LimitNaZmenu,@LimitNaZmenu1,@LimitNaZmenu2,@Autor,@DatumPridania,@Rezerva1,@Rezerva2,@Rezerva3)
+ELSE
+UPDATE NokOptions
+SET
+Linka = @Linka,
+Operacia = @Operacia,
+KodChyby = @KodChyby,
+PopisChyby = @PopisChyby,
+LimitNaZmenu = @LimitNaZmenu,
+LimitNaZmenu1 = @LimitNaZmenu1,
+LimitNaZmenu2 = @LimitNaZmenu2,
+Autor = @Autor,
+DatumPridania = @DatumPridania,
+Rezerva1 = @Rezerva1,
+Rezerva2 = @Rezerva2,
+Rezerva3 = @Rezerva3
+WHERE ID = @ID
+
+
+
+
+CREATE PROC NOKTableDeleteById   
+@ID int
+AS
+DELETE FROM NokOptions
+WHERE ID = @ID
+
+
+
+
+
+CREATE PROC RegisteredNOKTableDeleteById   
+@ID int
+AS
+DELETE FROM NokRegistration
+WHERE ID = @ID
+
+
+
+
+
+
+CREATE PROC UpdateByMaintenance   
+@ID int,
+@PricinaAleboPopisPoruchy varchar(8000),
+@VykonaneOpatrenieOprava varchar(8000)
+AS
+UPDATE DowntimeTable
+SET
+PricinaAleboPopisPoruchy = @PricinaAleboPopisPoruchy,
+VykonaneOpatrenieOprava = @VykonaneOpatrenieOprava
+WHERE ID = @ID
+
+
+
+
+create table dbo.CycleTime (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+Linka varchar(100),
+Vyrobok varchar(100),
+CasCyklu DECIMAL(10, 5),
+Rezerva1 varchar(1000),
+Rezerva2 varchar(1000),
+Rezerva3 varchar(1000),
+ );
+
+
+create table dbo.OEE (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+Line varchar(100),
+Date varchar(100),
+Shift varchar(100),
+Availability varchar(100),
+Performance varchar(100),
+Quality varchar(100),
+OEE varchar(100),
+CycleTime varchar(100),
+PlannedProductionTime varchar(100),
+OK varchar(100),
+NOK varchar(100),
+Downtime varchar(100),
+Spare1 varchar(1000),
+Spare2 varchar(1000),
+Spare3 varchar(1000),
+ );
+
+
+
+
+
+CREATE PROC EditOEE
+@ID int,
+@Line varchar(100),
+@Date varchar(100),
+@Shift varchar(100),
+@Availability varchar(100),
+@Performance varchar(100),
+@Quality varchar(100),
+@OEE varchar(100),
+@CycleTime varchar(100),
+@PlannedProductionTime varchar(100),
+@OK varchar(100),
+@NOK varchar(100),
+@Downtime varchar(100),
+@Spare1 varchar(1000),
+@Spare2 varchar(1000),
+@Spare3 varchar(1000)
+AS
+SET NOCOUNT ON
+UPDATE OEE
+SET
+Line = @Line,
+Date = @Date,
+Shift = @Shift,
+Availability = @Availability,
+Performance = @Performance,
+Quality = @Quality,
+OEE = @OEE,
+CycleTime = @CycleTime,
+PlannedProductionTime = @PlannedProductionTime,
+OK = @OK,
+NOK = @NOK,
+Downtime = @Downtime,
+Spare1 = @Spare1,
+Spare2 = @Spare2,
+Spare3 = @Spare3
+WHERE ID = @ID
+
+
+
+
+CREATE PROC DeleteOEE  
+@ID int,
+@Spare1 varchar(1000),
+@Spare2 varchar(1000),
+@Spare3 varchar(1000)
+AS
+SET NOCOUNT ON
+UPDATE OEE
+SET
+Spare1 = @Spare1,
+Spare2 = @Spare2,
+Spare3 = @Spare3
+WHERE ID = @ID
+
+
+
+
+CREATE PROC CycleTimeAddOrEdit
+@ID int,
+@Linka varchar(100),
+@Vyrobok varchar(100),
+@CasCyklu DECIMAL(10, 5),
+@Rezerva1 varchar(1000),
+@Rezerva2 varchar(1000),
+@Rezerva3 varchar(1000)
+AS
+ IF @ID = 0
+INSERT INTO CycleTime(Linka,Vyrobok,CasCyklu,Rezerva1,Rezerva2,Rezerva3)
+VALUES (@Linka,@Vyrobok,@CasCyklu,@Rezerva1,@Rezerva2,@Rezerva3)
+ELSE
+UPDATE CycleTime
+SET
+Linka = @Linka,
+Vyrobok = @Vyrobok,
+CasCyklu = @CasCyklu,
+Rezerva1 = @Rezerva1,
+Rezerva2 = @Rezerva2,
+Rezerva3 = @Rezerva3
+WHERE ID = @ID
+
+
+
+
+create table dbo.Operacie (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+Linka varchar(100),
+OP1 varchar(100),
+OP2 varchar(100),
+OP3 varchar(100),
+OP4 varchar(100),
+OP5 varchar(100),
+OP6 varchar(100),
+OP7 varchar(100),
+OP8 varchar(100),
+OP9 varchar(100),
+OP10 varchar(100),
+OP11 varchar(100),
+OP12 varchar(100),
+PridalUpravil varchar(100),
+DatumZmeny varchar(100),
+Rezerva1 varchar(1000),
+Rezerva2 varchar(1000),
+Rezerva3 varchar(1000),
+ );
+
+
+
+
+CREATE PROC OperacieAddOrEdit
+@ID int,
+@Linka varchar(100),
+@OP1 varchar(100),
+@OP2 varchar(100),
+@OP3 varchar(100),
+@OP4 varchar(100),
+@OP5 varchar(100),
+@OP6 varchar(100),
+@OP7 varchar(100),
+@OP8 varchar(100),
+@OP9 varchar(100),
+@OP10 varchar(100),
+@OP11 varchar(100),
+@OP12 varchar(100),
+@PridalUpravil varchar(100),
+@DatumZmeny varchar(100),
+@Rezerva1 varchar(1000),
+@Rezerva2 varchar(1000),
+@Rezerva3 varchar(1000)
+AS
+ IF @ID = 0
+INSERT INTO Operacie(Linka,OP1,OP2,OP3,OP4,OP5,OP6,OP7,OP8,OP9,OP10,OP11,OP12,PridalUpravil,DatumZmeny,Rezerva1,Rezerva2,Rezerva3)
+VALUES (@Linka,@OP1,@OP2,@OP3,@OP4,@OP5,@OP6,@OP7,@OP8,@OP9,@OP10,@OP11,@OP12,@PridalUpravil,@DatumZmeny,@Rezerva1,@Rezerva2,@Rezerva3)
+ELSE
+UPDATE Operacie
+SET
+Linka = @Linka,
+OP1 = @OP1,
+OP2 = @OP2,
+OP3 = @OP3,
+OP4 = @OP4,
+OP5 = @OP5,
+OP6 = @OP6,
+OP7 = @OP7,
+OP8 = @OP8,
+OP9 = @OP9,
+OP10 = @OP10,
+OP11 = @OP11,
+OP12 = @OP12,
+PridalUpravil = @PridalUpravil,
+DatumZmeny = @DatumZmeny,
+Rezerva1 = @Rezerva1,
+Rezerva2 = @Rezerva2,
+Rezerva3 = @Rezerva3
+WHERE ID = @ID
+
+
+
+create table dbo.OperaciePrihlasenie (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+Linka varchar(100),
+Operacia varchar(100),
+Meno varchar(100),
+Zmena varchar(100),
+Prihlasenie varchar(100),
+Odhlasenie varchar(100),
+rezerva1 varchar(1000),
+rezerva2 varchar(1000),
+rezerva3 varchar(1000),
+ );
+
+
+create table dbo.PCBproductionRelease (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+Date datetime,
+Hour varchar(1000),
+Shift nvarchar(1000),
+DM varchar(1000),
+InputPCBname varchar(1000),
+InputPCBcode varchar(1000),
+Batch varchar(1000),
+SN varchar(1000),
+PCBside nvarchar(1000),
+PressHeight1_1Result varchar(1000),
+PressHeight1_3Result varchar(1000),
+VizualInspectionResult varchar(1000),
+Notes nvarchar(3000),
+InspectionDoneBy nvarchar(1000),
+Spare1 nvarchar(1000),
+Spare2 nvarchar(1000),
+spare3 nvarchar(1000),
+ );
+
+
+
+
+CREATE PROC CycleTimeDelete  
+@ID int
+AS
+DELETE FROM CycleTime
+WHERE ID = @ID
+
+
+create table dbo.NOKescalations (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+NumOfNOK int,
+Operation nvarchar(1000),
+NOKcode int,
+NOKdescription nvarchar(1000),
+Date datetime,
+Line nvarchar(1000),
+Shift nvarchar(1000),
+ResetDoneBy nvarchar(1000),
+ );
+
+
+
+
+
+create table dbo.cardsX (
+ID INT NOT NULL IDENTITY PRIMARY KEY,
+card_id varchar(1000),
+id_doch varchar(1000),
+meno varchar(1000),
+priez varchar(1000),
+ );

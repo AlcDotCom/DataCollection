@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Costura.Fody.3.1.6\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.3.1.6\build\Costura.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{198D85F9-8F6D-4DAC-8062-909BA54AF028}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Downtime_registration</RootNamespace>
+    <AssemblyName>eLSO</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>clock_time.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Costura, Version=3.1.6.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.3.1.6\lib\net46\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="1. Initial Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1. Initial Page.Designer.cs">
+      <DependentUpon>1. Initial Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="calculation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="calculation.Designer.cs">
+      <DependentUpon>calculation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="EditNOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditNOK.Designer.cs">
+      <DependentUpon>EditNOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11.Designer.cs">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form118.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form118.Designer.cs">
+      <DependentUpon>Form118.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form12.Designer.cs">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form120.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form120.Designer.cs">
+      <DependentUpon>Form120.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form9.Designer.cs">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8.Designer.cs">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7.Designer.cs">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDforNOKreg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDforNOKreg.Designer.cs">
+      <DependentUpon>IDforNOKreg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUser.Designer.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NOK-OP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NOK-OP.Designer.cs">
+      <DependentUpon>NOK-OP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NOKregistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NOKregistration.Designer.cs">
+      <DependentUpon>NOKregistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPERATIONS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPERATIONS.Designer.cs">
+      <DependentUpon>OPERATIONS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PCBmenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCBmenu.Designer.cs">
+      <DependentUpon>PCBmenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PCBoverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCBoverview.Designer.cs">
+      <DependentUpon>PCBoverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PCBprodRelease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCBprodRelease.Designer.cs">
+      <DependentUpon>PCBprodRelease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="1. Initial Page.resx">
+      <DependentUpon>1. Initial Page.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calculation.resx">
+      <DependentUpon>calculation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditNOK.resx">
+      <DependentUpon>EditNOK.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form11.resx">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form118.resx">
+      <DependentUpon>Form118.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form12.resx">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form120.resx">
+      <DependentUpon>Form120.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form9.resx">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8.resx">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDforNOKreg.resx">
+      <DependentUpon>IDforNOKreg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUser.resx">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NOK-OP.resx">
+      <DependentUpon>NOK-OP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NOKregistration.resx">
+      <DependentUpon>NOKregistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPERATIONS.resx">
+      <DependentUpon>OPERATIONS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCBmenu.resx">
+      <DependentUpon>PCBmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCBoverview.resx">
+      <DependentUpon>PCBoverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCBprodRelease.resx">
+      <DependentUpon>PCBprodRelease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Downtime_registration.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Form12.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.IBinarySerialize.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.InvalidUdtException.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlContext.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlDataRecord.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlFacetAttribute.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlFunctionAttribute.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlMetaData.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlMethodAttribute.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlPipe.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlProcedureAttribute.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlTriggerAttribute.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlTriggerContext.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute.datasource" />
+    <None Include="Properties\DataSources\Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DataAdapter.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DataColumnMapping.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DataColumnMappingCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DataTableMapping.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DataTableMappingCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbCommand.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbCommandBuilder.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbConnection.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbConnectionStringBuilder.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbDataAdapter.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DBDataPermission.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DBDataPermissionAttribute.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbDataReader.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbDataRecord.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbDataSourceEnumerator.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbEnumerator.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbException.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbMetaDataCollectionNames.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbMetaDataColumnNames.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbParameter.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbParameterCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbProviderConfigurationHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbProviderFactories.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbProviderFactoriesConfigurationHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbProviderFactory.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbProviderSpecificTypePropertyAttribute.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.DbTransaction.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.RowUpdatedEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.RowUpdatingEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.SchemaTableColumn.datasource" />
+    <None Include="Properties\DataSources\System.Data.Common.SchemaTableOptionalColumn.datasource" />
+    <None Include="Properties\DataSources\System.Data.Constraint.datasource" />
+    <None Include="Properties\DataSources\System.Data.ConstraintCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.ConstraintException.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataColumn.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataColumnChangeEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataColumnChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataColumnCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataException.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataRelation.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataRelationCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataRow.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataRowBuilder.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataRowChangeEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataRowCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataRowView.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSetSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSysDescriptionAttribute.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTableClearEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTableClearEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTableCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTableNewRowEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTableNewRowEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTableReader.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataView.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataViewManager.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataViewSetting.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataViewSettingCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.DBConcurrencyException.datasource" />
+    <None Include="Properties\DataSources\System.Data.DeletedRowInaccessibleException.datasource" />
+    <None Include="Properties\DataSources\System.Data.DuplicateNameException.datasource" />
+    <None Include="Properties\DataSources\System.Data.EvaluateException.datasource" />
+    <None Include="Properties\DataSources\System.Data.FillErrorEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.FillErrorEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.ForeignKeyConstraint.datasource" />
+    <None Include="Properties\DataSources\System.Data.IColumnMapping.datasource" />
+    <None Include="Properties\DataSources\System.Data.IColumnMappingCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.IDataAdapter.datasource" />
+    <None Include="Properties\DataSources\System.Data.IDataParameter.datasource" />
+    <None Include="Properties\DataSources\System.Data.IDataParameterCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.IDataReader.datasource" />
+    <None Include="Properties\DataSources\System.Data.IDataRecord.datasource" />
+    <None Include="Properties\DataSources\System.Data.IDbCommand.datasource" />
+    <None Include="Properties\DataSources\System.Data.IDbConnection.datasource" />
+    <None Include="Properties\DataSources\System.Data.IDbDataAdapter.datasource" />
+    <None Include="Properties\DataSources\System.Data.IDbDataParameter.datasource" />
+    <None Include="Properties\DataSources\System.Data.IDbTransaction.datasource" />
+    <None Include="Properties\DataSources\System.Data.InRowChangingEventException.datasource" />
+    <None Include="Properties\DataSources\System.Data.InternalDataCollectionBase.datasource" />
+    <None Include="Properties\DataSources\System.Data.InvalidConstraintException.datasource" />
+    <None Include="Properties\DataSources\System.Data.InvalidExpressionException.datasource" />
+    <None Include="Properties\DataSources\System.Data.ITableMapping.datasource" />
+    <None Include="Properties\DataSources\System.Data.ITableMappingCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.MergeFailedEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.MergeFailedEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.MissingPrimaryKeyException.datasource" />
+    <None Include="Properties\DataSources\System.Data.NoNullAllowedException.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcCommand.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcCommandBuilder.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcConnection.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcConnectionStringBuilder.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcDataAdapter.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcDataReader.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcError.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcErrorCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcException.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcFactory.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcInfoMessageEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcInfoMessageEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcMetaDataCollectionNames.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcMetaDataColumnNames.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcParameter.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcParameterCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcPermission.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcPermissionAttribute.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcRowUpdatedEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcRowUpdatedEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcRowUpdatingEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcRowUpdatingEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.Odbc.OdbcTransaction.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbCommand.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbCommandBuilder.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbConnection.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbConnectionStringBuilder.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbDataAdapter.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbDataReader.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbEnumerator.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbError.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbErrorCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbException.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbFactory.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbInfoMessageEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbInfoMessageEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbMetaDataCollectionNames.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbMetaDataColumnNames.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbParameter.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbParameterCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbPermission.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbPermissionAttribute.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbRowUpdatedEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbRowUpdatedEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbRowUpdatingEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbRowUpdatingEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbSchemaGuid.datasource" />
+    <None Include="Properties\DataSources\System.Data.OleDb.OleDbTransaction.datasource" />
+    <None Include="Properties\DataSources\System.Data.OperationAbortedException.datasource" />
+    <None Include="Properties\DataSources\System.Data.PropertyCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.ReadOnlyException.datasource" />
+    <None Include="Properties\DataSources\System.Data.RowNotInTableException.datasource" />
+    <None Include="Properties\DataSources\System.Data.Sql.SqlDataSourceEnumerator.datasource" />
+    <None Include="Properties\DataSources\System.Data.Sql.SqlNotificationRequest.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.OnChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlBulkCopy.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlBulkCopyColumnMapping.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlBulkCopyColumnMappingCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlClientFactory.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlClientMetaDataCollectionNames.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlClientPermission.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlClientPermissionAttribute.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlColumnEncryptionCertificateStoreProvider.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlColumnEncryptionCngProvider.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlColumnEncryptionCspProvider.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlColumnEncryptionKeyStoreProvider.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlCommand.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlCommandBuilder.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlConnection.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlConnectionStringBuilder.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlCredential.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlDataAdapter.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlDataReader.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SQLDebugging.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlDependency.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlError.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlErrorCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlException.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlInfoMessageEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlInfoMessageEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlNotificationEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlParameter.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlParameterCollection.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlRowsCopiedEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlRowsCopiedEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlRowUpdatedEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlRowUpdatedEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlRowUpdatingEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlRowUpdatingEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlClient.SqlTransaction.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.INullable.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlAlreadyFilledException.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlBinary.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlBoolean.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlByte.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlBytes.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlChars.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlDateTime.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlDecimal.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlDouble.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlFileStream.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlGuid.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlInt16.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlInt32.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlInt64.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlMoney.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlNotFilledException.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlNullValueException.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlSingle.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlString.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlTruncateException.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlTypeException.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlTypesSchemaImporterExtensionHelper.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.SqlXml.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeBigIntSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeBinarySchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeBitSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeCharSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeDateTimeSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeDecimalSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeFloatSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeIntSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeMoneySchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeNCharSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeNTextSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeNumericSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeNVarCharSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeRealSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeSmallDateTimeSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeSmallIntSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeSmallMoneySchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeTextSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeTinyIntSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeUniqueIdentifierSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeVarBinarySchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeVarCharSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.SqlTypes.TypeVarImageSchemaImporterExtension.datasource" />
+    <None Include="Properties\DataSources\System.Data.StateChangeEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.StateChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.StatementCompletedEventArgs.datasource" />
+    <None Include="Properties\DataSources\System.Data.StatementCompletedEventHandler.datasource" />
+    <None Include="Properties\DataSources\System.Data.StrongTypingException.datasource" />
+    <None Include="Properties\DataSources\System.Data.SyntaxErrorException.datasource" />
+    <None Include="Properties\DataSources\System.Data.TypedDataSetGenerator.datasource" />
+    <None Include="Properties\DataSources\System.Data.TypedDataSetGeneratorException.datasource" />
+    <None Include="Properties\DataSources\System.Data.UniqueConstraint.datasource" />
+    <None Include="Properties\DataSources\System.Data.VersionNotFoundException.datasource" />
+    <None Include="Properties\DataSources\System.Xml.XmlDataDocument.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="clock_time.ico" />
+    <None Include="Resources\UNDER 2.png" />
+    <None Include="Resources\UNDER 1.png" />
+    <None Include="Resources\HINTEN FULL.png" />
+    <None Include="Resources\HINTEN MIDDLE.png" />
+    <None Include="Resources\HINTEN BASIC.png" />
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.3.2.13\build\Fody.targets" Condition="Exists('..\packages\Fody.3.2.13\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.3.2.13\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.3.2.13\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.3.1.6\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.1.6\build\Costura.Fody.props'))" />
+  </Target>
+</Project>
